@@ -24,7 +24,7 @@ public class StateMachine<T> where T : class
     /// <summary>
     /// Paremtro que representa una clase de entidad generica
     /// </summary>
-    private T entity;
+    public T entity;
     private string name;
     /// <summary>
     /// Nombre de la State Machine
@@ -43,12 +43,11 @@ public class StateMachine<T> where T : class
         }
     }
 
-    public StateMachine(string name, StateAbstract initState, T entity, StateAbstract globalState)
+    public StateMachine(string name, StateAbstract initState, GlobalState globalState)
     {
         Name = name;
         currentState = initState;
         ChangeState(initState);
-        this.entity = entity;
         this.globalState = globalState;
     }
 
