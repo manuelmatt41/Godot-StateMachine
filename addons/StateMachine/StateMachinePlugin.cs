@@ -7,7 +7,7 @@ public partial class StateMachinePlugin : EditorPlugin
 {
 	public override void _EnterTree()
 	{
-		AddCustomType("StateMachine", "Node", ResourceLoader.Load("StateMachine.cs") as Script, ResourceLoader.Load("res://icon.svg") as Texture2D);
+		AddCustomType("StateMachine", "Node", ResourceLoader.Load("res://addons/StateMachine/DefaultStateMachineNode.cs") as Script, ResourceLoader.Load("res://icon.svg") as Texture2D);
 	}
 
 	public override void _ExitTree()
