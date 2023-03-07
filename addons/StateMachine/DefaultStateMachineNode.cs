@@ -1,13 +1,13 @@
 using Godot;
 using System;
 
-public partial class DefaultStateMachineNode : Node
+public partial class DefaultStateMachineNode<E, S> : Node where E : class where S : State<E>
 {
-    private DefaultStateMachine<Node, State<Node>> defaultStateMachine;
-    public DefaultStateMachine<Node, State<Node>> DefaultStateMachine { get => defaultStateMachine; }
+    private DefaultStateMachine<E, S> defaultStateMachine;
+    public DefaultStateMachine<E, S> DefaultStateMachine { get => defaultStateMachine; }
     public override void _Ready()
     {
-        defaultStateMachine = new DefaultStateMachine<Node, State<Node>>(GetParent());
+        defaultStateMachine = new DefaultStateMachine<E, S>();
     }
 
     public override void _Process(double delta)
